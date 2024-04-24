@@ -69,9 +69,26 @@ const SidebarNav = () => {
                 px="4" py="2" w="100%"
                 borderRadius="full"
               >
-                <Link href="/">
+                <Link href="/estoque">
                   <Text fontSize="lg" fontWeight="medium" color="white">
                     PRODUTOS
+                  </Text>
+                </Link>
+              </ChakraLink>
+            </Stack>
+            <Text fontSize="20px" fontWeight="black" px="15" color="white">
+              LOGOUT
+            </Text>
+            <Stack>
+              <ChakraLink
+                bg="red"
+                _hover={{ bg: "red" }}
+                px="4" py="2" w="100%"
+                borderRadius="full"
+              >
+                <Link href="/">
+                  <Text fontSize="lg" fontWeight="medium" color="white">
+                    SAIR
                   </Text>
                 </Link>
               </ChakraLink>
