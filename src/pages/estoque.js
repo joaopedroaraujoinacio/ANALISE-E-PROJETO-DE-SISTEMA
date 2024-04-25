@@ -80,7 +80,7 @@ const Produtos = () => {
           <Sidebar />  
           <Box w="100%" color="black">
             <SimpleGrid  h="fit-content" spacing="8">
-              <Input fontWeight="semibold" color="white"
+              <Input border="2px solid white" borderRadius="full" fontWeight="semibold" color="white"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Insira aqui o nome do produto que deseja cadastrar."/>

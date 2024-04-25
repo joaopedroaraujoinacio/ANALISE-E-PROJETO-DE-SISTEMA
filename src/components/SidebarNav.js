@@ -14,6 +14,7 @@ const SidebarNav = () => {
             </Text>
             <Stack>
               <ChakraLink
+                border="3px solid white"
                 bg="red"
                 _hover={{ bg: "red" }}
                 px="4" py="2" w="100%"
@@ -33,6 +34,7 @@ const SidebarNav = () => {
             </Text>
             <Stack>
               <ChakraLink
+                border="3px solid white"
                 bg="red"
                 _hover={{ bg: "red" }}
                 px="4" py="2" w="100%"
@@ -45,6 +47,7 @@ const SidebarNav = () => {
                 </Link>
               </ChakraLink>
               <ChakraLink
+                border="3px solid white"
                 bg="red"
                 _hover={{ bg: "red" }}
                 px="4" py="2" w="100%"
@@ -64,6 +67,7 @@ const SidebarNav = () => {
             </Text>
             <Stack>
               <ChakraLink
+                border="3px solid white"
                 bg="red"
                 _hover={{ bg: "red" }}
                 px="4" py="2" w="100%"
@@ -81,6 +85,7 @@ const SidebarNav = () => {
             </Text>
             <Stack>
               <ChakraLink
+                border="3px solid white"
                 bg="red"
                 _hover={{ bg: "red" }}
                 px="4" py="2" w="100%"

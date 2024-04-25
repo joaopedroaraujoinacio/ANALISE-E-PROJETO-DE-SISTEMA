@@ -72,7 +72,7 @@ const StockEntries = () => {
 
                 <Box w="100%">
                     <SimpleGrid h="fit-content" spacing="8">
-                        <Select fontWeight="semibold" color="grey"
+                        <Select border="2px solid white" borderRadius="full" fontWeight="semibold" color="grey"
                         value={product_id}
                         onChange={(e) => setProduct_id(e.target.value)}>
                             <option value="0">Selecione o produto desejado.</option>
@@ -84,7 +84,7 @@ const StockEntries = () => {
                                     </option>
                                 ))}
                         </Select>
-                        <Input fontWeight="semibold" color="white"
+                        <Input border="2px solid white" borderRadius="full" fontWeight="semibold" color="white"
                             placeholder="Digite a quantidade." type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
                             />
                             <Button Button w="45" borderRadius="full" color="green" onClick={handleNewEntry}>
