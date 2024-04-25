@@ -5,7 +5,7 @@ function MyApp ({ Component, pageProps}) {
     return (
         <ChakraProvider>
             <SidebarProvider>
-            <title>MARVELETRONICOS</title>
+            <title>MARVELETRÔNICOS</title>
                 <Component {...pageProps} />
             </SidebarProvider>
         </ChakraProvider>
