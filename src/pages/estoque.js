@@ -83,7 +83,7 @@ const Produtos = () => {
               <Input border="2px solid white" borderRadius="full" fontWeight="semibold" color="white"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Insira aqui o nome do produto que deseja cadastrar."/>
+                placeholder="Insira aqui o nome do produto, ano e EAN que deseja cadastrar."/>
               <Button w="45" borderRadius="full" color="green" onClick={handleNewProduct}>
                 CADASTRAR PRODUTO
               </Button>

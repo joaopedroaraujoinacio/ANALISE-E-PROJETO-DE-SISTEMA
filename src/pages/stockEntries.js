@@ -64,7 +64,7 @@ const StockEntries = () => {
     };
 
     return (
-      <Flex background="#1A365D" h="100vh" flexDirection="column">
+      <Flex background="#1A365D" width="100%" h="100vh" flexDirection="column">
       <Header />
 
       <Flex color="white" width="100%" height="10vh" my="10" maxW={1120} mx="auto" px="10">
@@ -72,7 +72,7 @@ const StockEntries = () => {
 
                 <Box w="100%">
                     <SimpleGrid h="fit-content" spacing="8">
-                        <Select border="2px solid white" borderRadius="full" fontWeight="semibold" color="grey"
+                    <Select border="2px solid white" borderRadius="full" fontWeight="semibold" color="grey"
                         value={product_id}
                         onChange={(e) => setProduct_id(e.target.value)}>
                             <option value="0">Selecione o produto desejado.</option>

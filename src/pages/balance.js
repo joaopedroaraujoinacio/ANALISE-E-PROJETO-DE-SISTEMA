@@ -80,7 +80,7 @@ const Balance = () => {
                             <Thead>
                                 <Tr>
                                     <Th fontWeight="bold" color="white" fontSize="20px">
-                                        NOME DO PRODUTO
+                                        NOME, ANO E EAN DO PRODUTO
                                     </Th>
                                     <Th fontWeight="bold" color="white" fontSize="20px">
                                         SALDO
