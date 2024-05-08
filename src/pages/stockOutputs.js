@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import { Box, Button, Flex, Input, SimpleGrid, Table, Tbody, Td, Th, Thead, Tr, Select } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-const stockOutputs = () => {
+const StockOutputs = () => {
     const [amount, setAmount] = useState("");
     const [product_id, setProduct_id] = useState("0");
     const [listStockOutputs, setStockOutputs] = useState([]);
@@ -25,7 +25,7 @@ const stockOutputs = () => {
     }, []);
 
     const handleNewOutput = () => {
-        if (!amount | (product_id === "0")) {
+        if (!amount || (product_id === "0")) {
             return alert("Selecione o produto e a quantidade.");
         }
 
@@ -42,14 +42,14 @@ const stockOutputs = () => {
             localStorage.setItem(
                 "db_stock_outputs",
                 JSON.stringify([{ id, amount, product_id }])
-        );
+            );
 
-        setStockOutputs([{ id, amount, product_id }]);
-    }
-        
-    setAmount("");
-    setProduct_id("0");
-};
+            setStockOutputs([{ id, amount, product_id }]);
+        }
+
+        setAmount("");
+        setProduct_id("0");
+    };
 
     const removeOutput = (id) => {
         const newArray = listStockOutputs.filter((item) => item.id !== id);
@@ -64,65 +64,63 @@ const stockOutputs = () => {
     };
 
     return (
-        <Flex background="#1A365D" h="100vh" flexDirection="column">
-      <Header />
-
-      <Flex color="white" width="100%" height="10vh" my="10" maxW={1120} mx="auto" px="10">
-                <Sidebar/>
-
-                <Box w="100%">
-                    <SimpleGrid h="fit-content" spacing="8">
-                        <Select border="2px solid white" borderRadius="full" fontWeight="semibold" color="grey"
-                        value={product_id}
-                        onChange={(e) => setProduct_id(e.target.value)}>
-                            <option value="0">Selecione o produto desejado.</option>
-                            {listProducts &&
-                                listProducts.length > 0 &&
-                                listProducts.map((item, i) => (
-                                    <option key={i} value={item.id}>
-                                        {item.name}
-                                    </option>
-                                ))}
-                        </Select>
-                        <Input border="2px solid white" borderRadius="full" fontWeight="semibold" color="white"
-                            placeholder="Digite a quantidade." type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
-                            />
-                            <Button Button w="45" borderRadius="full" color="green" onClick={handleNewOutput}>
-                                SALVAR SAÍDA
-                            </Button>
-                    </SimpleGrid>
-                <Box overflowY="auto" height="80vh">
-                <Table mt="6">
-                    <Thead>
-                        <Tr>
-                            <Th fontWeight="bold" color="white" fontSize="20px">
-                              PRODUTO (SAÍDA)
-                            </Th>
-                            <Th fontWeight="bold" color="white" fontSize="20px">
-                              QUANTIDADE
-                            </Th>
-                            <Th></Th>
-                        </Tr>
-                    </Thead>
-                        <Tbody>
-                            {listStockOutputs.map((item, i) => (
-                            <Tr key={i}>
-                                <Td color="white">{getProductById(item.product_id)}</Td>
-                                <Td color="white">{item.amount}</Td>
-                                <Td textAlign="end">
-                                <Button p="3" h="100%" fontSize="15" color="red" fontWeight="bold" borderRadius="full" onClick={() => removeOutput(item.id)}>
-                                    EXCLUIR
-                                </Button>
-                                </Td>
-                            </Tr>
-                            ))}
-                        </Tbody>
-                    </Table>
-                </Box>
-            </Box>
-        </Flex>
+      <Flex background="#1A365D" minHeight="100vh" flexDirection="column">
+        <Header />
+        <Flex color="white" width="100%" my="10" maxW={1120} mx="auto" px="10">
+          <Sidebar/>
+          <Box w="100%">
+            <SimpleGrid h="fit-content" spacing="8">
+              <Select border="2px solid white" borderRadius="full" fontWeight="semibold" color="grey"
+                  value={product_id}
+                  onChange={(e) => setProduct_id(e.target.value)}>
+                  <option value="0">Selecione o produto desejado.</option>
+                  {listProducts &&
+                      listProducts.length > 0 &&
+                      listProducts.map((item, i) => (
+                          <option key={i} value={item.id}>
+                              {item.name}
+                          </option>
+                      ))}
+              </Select>
+              <Input border="2px solid white" borderRadius="full" fontWeight="semibold" color="white"
+                  placeholder="Digite a quantidade." type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
+              />
+              <Button Button w="45" borderRadius="full" color="green" onClick={handleNewOutput}>
+                  SALVAR SAÍDA
+              </Button>
+            </SimpleGrid>
+            <Box flex="1" marginBottom="20px">
+              <Table mt="6">
+                  <Thead>
+                      <Tr>
+                          <Th fontWeight="bold" color="white" fontSize="20px">
+                            PRODUTO (SAÍDA)
+                          </Th>
+                          <Th fontWeight="bold" color="white" fontSize="20px">
+                            QUANTIDADE
+                          </Th>
+                          <Th></Th>
+                      </Tr>
+                  </Thead>
+                      <Tbody>
+                          {listStockOutputs.map((item, i) => (
+                          <Tr key={i}>
+                              <Td color="white">{getProductById(item.product_id)}</Td>
+                              <Td color="white">{item.amount}</Td>
+                              <Td textAlign="end">
+                              <Button p="3" h="100%" fontSize="15" color="red" fontWeight="bold" borderRadius="full" onClick={() => removeOutput(item.id)}>
+                                  EXCLUIR
+                              </Button>
+                              </Td>
+                          </Tr>
+                          ))}
+                      </Tbody>
+                  </Table>
+              </Box>
+          </Box>
+      </Flex>
     </Flex>
-    );
+  );
 };
 
-export default stockOutputs;
+export default StockOutputs;
