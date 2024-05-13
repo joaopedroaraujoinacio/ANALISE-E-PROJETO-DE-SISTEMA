@@ -7,7 +7,7 @@ const SidebarNav = () => {
     const { asPath } = useRouter();
 
     return (
-        <Box background="#1A365D" py="10" px="15">
+        <Box background="#1A365D" py="1" px="15" mt="1">
             <Stack spacing="10">
                 <Stack>
                     <Text fontSize="20px" fontWeight="black" color="white">
