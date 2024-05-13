@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import { Box, Button, Flex, Input, SimpleGrid, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { Box, Flex, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
 const Balance = () => {
@@ -34,20 +34,20 @@ const Balance = () => {
                 .map ((entry) => Number(entry.amount))
                 .reduce((acc, cur) => acc + cur, 0);
 
-        const total = Number(entries) - Number(outputs);
+            const total = Number(entries) - Number(outputs);
 
-        newArray.push({
-            product_id: prod.id,
-            product_name: prod.name,
-            amount: total,
+            newArray.push({
+                product_id: prod.id,
+                product_name: prod.name,
+                amount: total,
+            });
+
+            return null;
         });
 
         setListProducts(newArray);
         setCmbProducts(newArray);
-        });
-
-};
-
+    };
 
     useEffect (() => {
         BuildBalanceArray();
@@ -66,16 +66,13 @@ const Balance = () => {
         setListProducts(newArray);
     };
 
-
     return (
-        <Flex background="#1A365D" h="100vh" flexDirection="column">
-      <Header />
-
-      <Flex color="white" width="100%" height="10vh" my="10" maxW={1120} mx="auto" px="10">
-                <Sidebar/>
-
+        <Flex background="#1A365D" minHeight="100vh" flexDirection="column">
+            <Header />
+            <Flex color="white" width="100%" my="10" maxW={1120} mx="auto" px="10">
+                <Sidebar />
                 <Box w="100%">
-                    <Box overflowY="auto" height="80vh">
+                    <Box overflowY="auto" flex="1">
                         <Table mt="6">
                             <Thead>
                                 <Tr>
@@ -102,6 +99,5 @@ const Balance = () => {
         </Flex>
     );
 };
-
 
 export default Balance;
