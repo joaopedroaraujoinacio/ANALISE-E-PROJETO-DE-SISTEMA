@@ -7,4 +7,8 @@ São eles;
 
 Fazendo isso, finalmente, deem o comando;
 
-4. npm run dev 
+4. npm run dev
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Link para o vídeo da apresentação no YouTube: https://www.youtube.com/watch?v=U8Vr-5c3z5k
